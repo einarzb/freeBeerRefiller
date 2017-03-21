@@ -1,0 +1,28 @@
+{
+  "name": "free-beer-refill",
+  "version": "1.0.0",
+  "description": "calculate how much beers u need to drink to not be fraier",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/einarzb/freeBeerRefiller.git"
+  },
+  "keywords": [
+    "einar",
+    "barzilay"
+  ],
+  "author": "einar barzilay @einarzb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/einarzb/freeBeerRefiller/issues"
+  },
+  "homepage": "https://github.com/einarzb/freeBeerRefiller#readme",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2"
+  }
+}
