@@ -5,8 +5,8 @@ $scope.fee;
 $scope.amountMonth;
 $scope.amountDay;
 
-$scope.calcBeer = function (fee) {
-  var tlvBeer = 30;
+$scope.calcBeer = function (fee, tlvBeer) {
+  tlvBeer = 30;
   console.log(fee);
   console.log(tlvBeer);
   beerService.calcBeer(fee, tlvBeer);
