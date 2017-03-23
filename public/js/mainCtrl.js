@@ -1,16 +1,18 @@
 app.controller('mainCtrl', function($scope, beerService) {
 //toggling view
 $scope.intro = false;
-$scope.resultPannel = true;
+$scope.result = true;
 $scope.alertStart = true;
 //intialize storage
 $scope.total = 0;
 //user input
 $scope.fee;
 
-//calculation function
+//calculation function #intro
 $scope.calcBeer = function(fee){
-  alert("im calc button" + fee);
+  //toggle to hide #intro and reveal #result view
+  $scope.intro = true;
+  $scope.result = false;
 };
 
 });
