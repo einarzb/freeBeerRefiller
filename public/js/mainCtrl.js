@@ -5,7 +5,7 @@ $scope.result = true;
 $scope.alertStart = true;
 //intialize global vars
 $scope.total = 0;
-var gemsCup = 9;
+var jemsCup = 9;
 //user input
 $scope.fee;
 
@@ -15,7 +15,7 @@ $scope.calcBeer = function(fee){
   $scope.intro = true;
   $scope.result = false;
   //calculate total
-  $scope.total = (fee / gemsCup);
+  $scope.total = (fee / jemsCup);
   console.log($scope.total);
 };
 
