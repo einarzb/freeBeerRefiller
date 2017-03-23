@@ -1,26 +1,35 @@
-app.controller('mainCtrl', function($scope, beerService) {
+app.controller('mainCtrl', function($scope, beerService) { //jqlite
 //toggling view
 $scope.intro = false;
 $scope.result = true;
 $scope.setAlert = true;
 $scope.alertStart = true;
+
 //intialize global vars
 $scope.total = 0;
 var jemsCup = 9;
+$scope.pluralSingle;
 //user input
 $scope.fee;
 
-//calculation function #intro
+//calculation function
 $scope.calcBeer = function(fee){
   //toggle to hide #intro and reveal #result view
+  //jquery here for the animation
+
   $scope.intro = true;
   $scope.result = false;
-
   //calculate total
   $scope.total = Math.round((fee / jemsCup));
   console.log($scope.total);
+  //calculate daily consumption in between (200 (min) - 2400)
   $scope.dayAmount = Math.round(($scope.total / 30));
   console.log($scope.dayAmount);
+  //AA alert - change it to switches
+    if ($scope.dayAmount === 8){
+      console.log("AA alert");
+      alert("dude you need help");
+    };
 };
 
 //yes/no buttons phase

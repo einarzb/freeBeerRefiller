@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('.pour') //Pour Me Another Drink, Bartender!
     .delay(2000)
     .animate({
+      top:'10px',
       height: '360px'
       }, 1500)
     .delay(1600)
