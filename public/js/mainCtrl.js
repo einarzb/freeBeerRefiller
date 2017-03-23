@@ -3,8 +3,9 @@ app.controller('mainCtrl', function($scope, beerService) {
 $scope.intro = false;
 $scope.result = true;
 $scope.alertStart = true;
-//intialize storage
+//intialize global vars
 $scope.total = 0;
+var gemsCup = 9;
 //user input
 $scope.fee;
 
@@ -13,6 +14,9 @@ $scope.calcBeer = function(fee){
   //toggle to hide #intro and reveal #result view
   $scope.intro = true;
   $scope.result = false;
+  //calculate total
+  $scope.total = (fee / gemsCup);
+  console.log($scope.total);
 };
 
 });
