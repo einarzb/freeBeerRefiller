@@ -3,11 +3,13 @@
 <head>
     <title>beer++</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body ng-controller="mainCtrl">
     <div class="container">
         <div class="row">
+
             <div class="jumbotron">
                 <h1>beer ++</h1>
                 <h5><em>TO BEER OR NOT TO BE</em></h5>
@@ -41,11 +43,45 @@
                 </div>
             </div>
         </div>
+
+        <!--end col-->
+        <!--BEER ANIMATION-->
+        <div class="container">
+            <div class="row">
+                <div id="container">
+                    <div class="pour"></div>
+                    <div id="beaker">
+                        <div class="beer-foam">
+                            <div class="foam-1"></div>
+                            <div class="foam-2"></div>
+                            <div class="foam-3"></div>
+                            <div class="foam-4"></div>
+                            <div class="foam-5"></div>
+                            <div class="foam-6"></div>
+                            <div class="foam-7"></div>
+                        </div>
+
+                        <div id="liquid">
+
+                            <div class="bubble bubble1"></div>
+                            <div class="bubble bubble2"></div>
+                            <div class="bubble bubble3"></div>
+                            <div class="bubble bubble4"></div>
+                            <div class="bubble bubble5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END COL-->
     </div>
+    <!--end row-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/beerService.js"></script>
     <script type="text/javascript" src="js/mainCtrl.js"></script>
+    <script type="text/javascript" src="js/beerAnimation.js"></script>
 </body>
 
 </html>
