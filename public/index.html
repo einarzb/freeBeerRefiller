@@ -21,20 +21,27 @@
                 </p>
 
                 <div class="result" ng-show="!result">
-                    <p>to not be <span class="h3 text-center"><em>A FRAIER</em></span> you'll need to chug down {{total}} Jem's cups!
-                        <!-- <label>set happy hour:</label>
-                        <input ng-model="happyHour" type="number" /><br>
-                        <label>set refill alert:</label>
-                        <select ng-model="refill">
-                      <option value="20">20 min</option>
-                      <option value="40">40 min</option>
-                      <option value="60">60 min</option>
-                      <option value="2 hour">2 HR</option>
-                      <option value="3 hour">3 HR</option>
-                    </select>
-                        <button class="btn btn-success" ng-click="setAlert(happyHour)">set Alert</button> -->
+                    <p>In order to not be a<span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down {{total}} Jem's cups in total! <br> which is about {{dayAmount}} cups a day! fantatsic! <br></p>
+                    <p class="text-center"> accept the challange? <br>
+                        <button class="btn btn-success" type="button" ng-click="yes()" name="yes"> yes </button>
+                        <button class="btn btn-danger" type="button" name="no" ng-click="no()">no</button>
                     </p>
                 </div>
+
+                <div class="setAlert" ng-show="!setAlert">
+                    <label>set happy hour:</label>
+                    <input ng-model="happyHour" type="number" /><br>
+                    <label>set refill alert:</label>
+                    <select ng-model="refill">
+                        <option value="20">20 min</option>
+                        <option value="40">40 min</option>
+                        <option value="60">60 min</option>
+                        <option value="2 hour">2 HR</option>
+                        <option value="3 hour">3 HR</option>
+                      </select>
+                    <button class="btn btn-success" ng-click="setAlert(happyHour)">set Alert</button>
+                </div>
+
 
                 <div class="jumbotron text-center" ng-show="!alertStart">
                     <h1>it's beer O'clock</h1>
@@ -85,3 +92,4 @@
 </body>
 
 </html>
+>
