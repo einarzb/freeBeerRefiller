@@ -1,41 +1,51 @@
 <html ng-app="beerApp">
-<head>
-  <title>beer++</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"/>
-</head>
-<body ng-controller="mainCtrl">
-      <div class="container">
-        <div class="row">
-          <div class="jumbotron">
-            <h1>beer ++</h1>
-            <h5><em>TO BEER OR NOT TO BE...FRAIER</em></h5>
-            <p ng-hide="check">
-                <label>type in your fee</label>
-                <input ng-model="fee" type="number" /><br>
-                <button class="btn btn-success" ng-click="calcBeer(fee)">calc</button>
-            </p>
 
-            <div class="result" ng-show="!resultPannel">
-                <p>to not be <span class="h1">FRAIER</span> you'll need to drink {{amountMonth}} beers in month <br>
-                    and {{amountDay}} a day <br>
-                    <label>set happy hour:</label>
-                    <input type="number">{{happyHour}} <br>
-                    <label>set refill alert:</label>
-                    <select>
-                      <option value="20 min">20 min</option>
-                      <option value="40 min">40 min</option>
-                      <option value="60 min">60 min</option>
+<head>
+    <title>beer++</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>beer ++</h1>
+                <h5><em>TO BEER OR NOT TO BE</em></h5>
+
+                <p ng-hide="intro">
+                    <label>what is your fee?</label>
+                    <input ng-model="fee" type="number" /><br>
+                    <button class="btn btn-success" ng-click="calcBeer(fee)">calc</button>
+                </p>
+
+                <div class="result" ng-show="!resultPannel">
+                    <p>to not be <span class="h1">A FRAIER</span> you'll need to drink a total amount of {{monthAmount}} beers a month <br> and {{dayAmount}} beers a day <br>
+                        <label>set happy hour:</label>
+                        <input ng-model="happyHour" type="number" /><br>
+                        <label>set refill alert:</label>
+                        <select ng-model="refill">
+                      <option value="20">20 min</option>
+                      <option value="40">40 min</option>
+                      <option value="60">60 min</option>
                       <option value="2 hour">2 HR</option>
                       <option value="3 hour">3 HR</option>
                     </select>
-                 </p> 
-             </div>
-          </div>
-        </div>        
-      </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>      
-<script type="text/javascript" src="js/app.js"></script> 
-<script type="text/javascript" src="js/beerService.js"></script>      
-<script type="text/javascript" src="js/mainCtrl.js"></script>      
+                        <button class="btn btn-success" ng-click="setAlert(happyHour)">set Alert</button>
+                    </p>
+                </div>
+
+                <div class="jumbotron text-center" ng-show="!alertStart">
+                    <h1>it's beer O'clock</h1>
+                    <p>you will get a beer alert starting from {{happyHour}}pm in an intervals of {{refill}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/beerService.js"></script>
+    <script type="text/javascript" src="js/mainCtrl.js"></script>
 </body>
+
 </html>

@@ -1,18 +1,16 @@
 app.controller('mainCtrl', function($scope, beerService) {
-$scope.check = false;
+//toggling view
+$scope.intro = false;
 $scope.resultPannel = true;
+$scope.alertStart = true;
+//intialize storage
+$scope.total = 0;
+//user input
 $scope.fee;
-$scope.amountMonth;
-$scope.amountDay;
 
-$scope.calcBeer = function (fee, tlvBeer) {
-  tlvBeer = 30;
-  console.log(fee);
-  console.log(tlvBeer);
-  beerService.calcBeer(fee, tlvBeer);
-  $scope.check = false;
-  $scope.resultPannel =! $scope.resultPannel;
+//calculation function
+$scope.calcBeer = function(fee){
+  alert("im calc button" + fee);
 };
-
 
 });
