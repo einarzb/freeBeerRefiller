@@ -22,11 +22,6 @@ $scope.calcBeer = function(fee){
   $scope.dayAmount = Math.round(($scope.total / 30));
   console.log($scope.dayAmount);
 };
-  //select
-  $scope.calander; //select ng-model
-  var month = $scope.total / 30;
-  var week = month / 5;
-  var day = week / 5;
 
 //yes/no buttons phase
 $scope.no = function(){
@@ -36,12 +31,14 @@ $scope.no = function(){
 
 $scope.yes = function(){
   console.log("yes");
+  //toggeling views
   $scope.setAlert = false;
   $scope.result = true;
-
 };
 
-
+//todo: if total < 100 its not good. must be starting from 200
+//if total > 1000. 1500 = 6 beers a day . 2400 - 9 cups AA
+// if total > 2400 then calculate month consupmtion and week and day
 
 
 

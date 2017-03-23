@@ -9,18 +9,22 @@
 <body ng-controller="mainCtrl">
     <div class="container">
         <div class="row">
-
             <div class="jumbotron">
-                <h1>beer ++</h1>
-                <h5><em>TO BEER OR NOT TO BE</em></h5>
 
-                <p ng-hide="intro">
+                <div class="row">
+                    <div class="pull-left">
+                        <h1>beer++</h1>
+                        <h5><em>TO BEER OR NOT TO BE</em></h5>
+                    </div>
+                </div>
+
+                <p ng-hide="intro" class="text-center">
                     <label>what is your fee?</label>
-                    <input ng-model="fee" type="number" /><br>
+                    <input class="fee" ng-model="fee" type="number" />
                     <button class="btn btn-success" ng-click="calcBeer(fee)">calc</button>
                 </p>
 
-                <div class="result" ng-show="!result">
+                <div class="result" class="pull-left" ng-show="!result">
                     <p>In order to not be a<span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down {{total}} Jem's cups in total! <br> which is about {{dayAmount}} cups a day! fantatsic! <br></p>
                     <p class="text-center"> accept the challange? <br>
                         <button class="btn btn-success" type="button" ng-click="yes()" name="yes"> yes </button>
