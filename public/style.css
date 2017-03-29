@@ -1,8 +1,11 @@
 body{color:#FFEE7D;}
+p {font-size: 1.7em;}
 .fee{width:100px;}
 .jumbotron{background-color: #282F44;}
-.beerText, input{color:grey;}
-
+.beerText{color:#282F44;}
+input, select{color:grey;}
+.result {color:#fff;margin-top:20px;}
+label{font-weight: normal;}
 /*beer animation*/
 
 #container {
@@ -10,7 +13,7 @@ body{color:#FFEE7D;}
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  top: -50px;
+  top: -20px;
   width: 270px;
 }
 
@@ -18,7 +21,7 @@ body{color:#FFEE7D;}
 
 .pour {
   position: absolute;
-  left: 45%;
+  left: 40%;
   width: 20px;
   height: 0px;
   background-color: #edaf32;
