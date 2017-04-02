@@ -1,4 +1,4 @@
-app.controller('mainCtrl', function($scope, beerService) { //jqlite
+app.controller('mainCtrl', function($scope, beerService) {
 //toggling view
 $scope.intro = false;
 $scope.result = true;
@@ -8,7 +8,7 @@ $scope.alertStart = true;
 //intialize global vars
 $scope.total = 0;
 var jemsCup = 9;
-$scope.pluralSingle;
+//$scope.pluralSingle = "s";
 //user input
 $scope.fee;
 
@@ -26,10 +26,12 @@ $scope.calcBeer = function(fee){
   $scope.dayAmount = Math.round(($scope.total / 30));
   console.log($scope.dayAmount);
   //AA alert - change it to switches
-    if ($scope.dayAmount === 8){
-      console.log("AA alert");
-      alert("dude you need help");
-    };
+ //    if ($scope.dayAmount > 1){
+ //      $scope.pluralSingle = "s";
+ // else {
+ //
+ // }
+ //    };
 };
 
 //yes/no buttons phase

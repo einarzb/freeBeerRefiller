@@ -34,7 +34,9 @@
                         <h5><em>TO BEER OR NOT TO BE</em></h5>
                     </div>
                     <div class="pull-right" style="margin-top:40px;">
-                        <span class="text-center"><img style="height:46px;width:179px;" ng-src="images/we.png" alt="" /></span>
+                        <span class="text-center">
+                          <img style="height:46px;width:179px;" ng-src="images/we.png" alt="" />
+                        </span>
                     </div>
                 </div>
                 <div class="row">
@@ -42,15 +44,17 @@
                         <p>
                             <label>Enter your monthly fee</label>
                             <input class="fee" ng-model="fee" type="number" min="0" />
-                            <button class="btn btn-success" ng-click="calcBeer(fee)">calc</button>
+                            <button class="btn btn-success calc" ng-click="calcBeer(fee)">calc</button>
                         </p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="result text-center" ng-show="!result">
-                        <p>In order to not be a<span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down:<br><br>
-                            <span class="h3">{{total}}</span> Jem's cup{{pluralSingle}} in total !<br>which is about <span class="h3">{{dayAmount}}</span> cups a day! fantatsic!</p>
+                        <p>In order to not be a
+                            <span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down:<br><br>
+                            <span class="h3">{{total}}</span> Jem's cup{{pluralSingle}} in total !<br> which is about <span class="h3">{{dayAmount}}</span> cups a day! fantatsic!
+                        </p>
                     </div>
                 </div>
 
@@ -122,6 +126,8 @@
         <script type="text/javascript" src="js/beerService.js"></script>
         <script type="text/javascript" src="js/mainCtrl.js"></script>
         <script type="text/javascript" src="js/beerAnimation.js"></script>
+
+
 </body>
 
 </html>
