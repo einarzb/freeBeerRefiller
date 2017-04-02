@@ -6,6 +6,8 @@ p {font-size: 1.7em;}
 input, select{color:grey;}
 .result {color:#fff;margin-top:20px;}
 label{font-weight: normal;}
+.btn-warning{height: 37px;margin-top: -6px;}
+
 /*beer animation*/
 
 #container {
