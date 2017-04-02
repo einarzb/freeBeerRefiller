@@ -24,7 +24,7 @@
     </script>
 </head>
 
-<body ng-controller="mainCtrl">
+<body ng-controller="mainCtrl" ng-cloak="">
     <div class="container">
         <div class="row">
             <div class="jumbotron">
@@ -61,10 +61,11 @@
                 </div>
 
 
-                <div class="setAlert" ng-show="!setAlert">
+                <div class="setAlert text-center" ng-show="!setAlert">
                     <label>set happy hour:</label>
-                    <input type="time" name="time" ng-model="happyHour" placeholder="HH:mm:ss" min="08:00:00" max="23:00:00" required />
-                    <br> <label>set refill alert:</label>
+                    <input type="time" class="time" ng-model="happyHour" placeholder="HH:mm:ss" min="08:00:00" max="23:00:00" required />
+                    <br>
+                    <label>set refill alert:</label>
                     <select ng-model="refill">
                         <option value="20">20 min</option>
                         <option value="40">40 min</option>
@@ -72,13 +73,14 @@
                         <option value="2 hour">2 HR</option>
                         <option value="3 hour">3 HR</option>
                       </select>
-                    <button class="btn btn-success" ng-click="setAlert(happyHour)">set Alert</button>
+                    <br> <br>
+                    <button class="btn btn-warning" ng-click="setBeerAlert(happyHour)">set Alert</button>
                 </div>
 
 
                 <div class="jumbotron text-center" ng-show="!alertStart">
-                    <h1>it's beer O'clock</h1>
-                    <p>you will get a beer alert starting from {{happyHour}}pm in an intervals of {{refill}}
+                    <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i></h1>
+                    <p style="color:#fff;">you will get a beer alert starting from {{happyHour}}pm in an intervals of {{refill}} mins
                     </p>
                 </div>
 

@@ -14,17 +14,23 @@ $scope.fee;
 
 //calculation function
 $scope.calcBeer = function(fee){
-  //toggle to hide #intro and reveal #result view
-  //jquery here for the animation
+  if ($scope.fee > 0) {
+      //toggle to hide #intro and reveal #result view
+      $scope.intro = true;
+      $scope.result = false;
+      //calculate total
+      $scope.total = Math.round((fee / jemsCup));
+      console.log($scope.total);
+      //calculate daily consumption in between (200 (min) - 2400)
+      $scope.dayAmount = Math.round(($scope.total / 30));
+      console.log($scope.dayAmount);
+    }
+    else if ($scope.fee > 0 && $scope.fee < 200) {
+      alert("hide here ");
+  } else {
+      alert("fill in");
+    };
 
-  $scope.intro = true;
-  $scope.result = false;
-  //calculate total
-  $scope.total = Math.round((fee / jemsCup));
-  console.log($scope.total);
-  //calculate daily consumption in between (200 (min) - 2400)
-  $scope.dayAmount = Math.round(($scope.total / 30));
-  console.log($scope.dayAmount);
   //AA alert - change it to switches
  //    if ($scope.dayAmount > 1){
  //      $scope.pluralSingle = "s";
@@ -47,6 +53,11 @@ $scope.yes = function(){
   $scope.result = true;
 };
 
+
+$scope.setBeerAlert = function(happyHour){
+  $scope.alertStart = false;
+  $scope.setAlert = true;
+};
 //todo: if total < 100 its not good. must be starting from 200
 //if total > 1000. 1500 = 6 beers a day . 2400 - 9 cups AA
 // if total > 2400 then calculate month consupmtion and week and day

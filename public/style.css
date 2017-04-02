@@ -3,11 +3,12 @@ p {font-size: 1.7em;}
 .fee{width:100px;}
 .jumbotron{background-color: #282F44;}
 .beerText{color:#282F44;}
-input, select{color:grey;}
+input, select{color:grey;border-radius: 5px;margin-top:5px;}
 .result {color:#fff;margin-top:20px;}
 label{font-weight: normal;}
 .btn-warning{height: 37px;margin-top: -6px;}
-
+.setAlert {font-size: 1.5em;}
+.time{width: 120px;}
 /*beer animation*/
 
 #container {
