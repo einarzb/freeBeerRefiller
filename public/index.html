@@ -23,7 +23,6 @@
         ga('send', 'pageview');
     </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-
 </head>
 
 <body ng-controller="mainCtrl" ng-cloak="">
@@ -65,7 +64,7 @@
 
                 <div class="setAlert text-center" ng-show="!setAlert">
                     <label>set happy hour:</label>
-                    <input type="time" class="time" ng-model="happyHour" placeholder="HH:mm:ss" min="08:00:00" max="23:00:00" required />
+                    <input type="time" class="time" ng-model="happyHour" placeholder="01:00:PM" min="08:00:00" max="23:00:00" required />
                     <br>
                     <label>set refill alert:</label>
                     <select ng-model="refill">
@@ -84,6 +83,11 @@
                     <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i></h1>
                     <p style="color:#fff;">you will get a beer alert starting from {{happyHour}}pm in an intervals of {{refill}} mins
                     </p>
+
+                    <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>
+                    <button class="btn btn-success" ng-click="start()">ok</button>
+
+
                 </div>
 
                 <!--end col-->

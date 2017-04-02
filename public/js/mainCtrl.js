@@ -8,9 +8,12 @@ $scope.alertStart = true;
 //intialize global vars
 $scope.total = 0;
 var jemsCup = 9;
+
 //$scope.pluralSingle = "s";
+
 //user input
 $scope.fee;
+$scope.happyHour;
 
 //calculation function
 $scope.calcBeer = function(fee){
@@ -57,6 +60,10 @@ $scope.yes = function(){
 $scope.setBeerAlert = function(happyHour){
   $scope.alertStart = false;
   $scope.setAlert = true;
+
+  var dateString = $scope.happyHour;
+  var dateString = dateString.split(' ').slice(0, 3).join(' ');
+  console.log(dateString);
 };
 //todo: if total < 100 its not good. must be starting from 200
 //if total > 1000. 1500 = 6 beers a day . 2400 - 9 cups AA
