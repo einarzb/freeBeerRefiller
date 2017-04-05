@@ -9,7 +9,6 @@ $scope.alertStart = true;
 $scope.total = 0;
 var jemsCup = 9;
 
-//$scope.pluralSingle = "s";
 
 //user input
 $scope.fee;
@@ -28,12 +27,17 @@ $scope.calcBeer = function(fee){
       $scope.dayAmount = Math.round(($scope.total / 30));
       console.log($scope.dayAmount);
     }
-    else if ($scope.fee > 0 && $scope.fee < 200) {
-      alert("hide here ");
-  } else {
+     else {
       alert("please fill in an amount");
     };
-
+    //day amount
+    if ($scope.dayAmount === 1 ) {
+      console.log("1 cup a day");
+      $scope.pluralSingle = "";
+    } else {
+      console.log("cups in plural");
+      $scope.pluralSingle = "s";
+    }
   //AA alert - change it to switches
  //    if ($scope.dayAmount > 1){
  //      $scope.pluralSingle = "s";
