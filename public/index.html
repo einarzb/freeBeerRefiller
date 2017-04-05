@@ -27,24 +27,23 @@
 
 <body ng-controller="mainCtrl" ng-cloak="">
     <div class="container-fluid jumbotron">
-
         <div class="row">
             <div class="col-md-6 col-md-push-1">
                 <h1>beer++</h1>
                 <h5><em>TO BEER OR NOT TO BE</em></h5>
             </div>
-            <div class="col-md-6 col-md-push-4">
-                <img style="height:46px;width:179px;margin-top:32px;" ng-src="images/we.png" alt="" />
+            <div class="col-md-6 col-md-push-3">
+                <a href="https://www.wework.com/"><img style="height:46px;width:179px;margin-top:32px;" ng-src="images/we.png" alt="" /></a>
             </div>
-
         </div>
+        <!--calc-->
         <div class="row">
-            <div class="text-center" ng-hide="intro">
+            <div class="col-md-6 col-md-push-4 calcPart" ng-hide="intro">
                 <p>
-                    <label>Enter your monthly fee
-                            <input class="fee" ng-model="fee" type="number" min="0" />
-                            <button class="btn btn-warning calc" ng-click="calcBeer(fee)">calc</button>
-                            </label>
+                    <label>Enter your monthly fee &nbsp;
+                      <input class="fee" ng-model="fee" type="number" min="0" />
+                      <button class="btn btn-warning calc" ng-click="calcBeer(fee)">calc</button>
+                   </label>
                 </p>
             </div>
         </div>

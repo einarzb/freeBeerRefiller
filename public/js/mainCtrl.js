@@ -31,7 +31,7 @@ $scope.calcBeer = function(fee){
     else if ($scope.fee > 0 && $scope.fee < 200) {
       alert("hide here ");
   } else {
-      alert("fill in");
+      alert("please fill in an amount");
     };
 
   //AA alert - change it to switches
