@@ -47,9 +47,11 @@
         <div class="row">
             <div class="result text-center" ng-show="!result">
                 <p> To make the most out of your rental fee in
-                    <b><em>we work</em></b> <br> you'll need to chug down:<br><br>
-                    <span style="color:#FFEE7D">{{total}}</span> Jem's cups in total !<br> which is about
-                    <span style="color:#FFEE7D">{{dayAmount}}</span> cup{{pluralSingle}} a day! fantatsic!
+                    <b><em>we work</em></b> <br> you'll need to chug down:
+                    <span style="color:#FFEE7D">{{total}}</span> Jem's cups in total !<br>
+                    <p ng-hide="smallAmount">
+                        which is about <span style="color:#FFEE7D">{{dayAmount}}</span> cup{{pluralSingle}} a day! fantatsic!
+                    </p>
                 </p>
             </div>
         </div>

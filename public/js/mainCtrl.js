@@ -4,7 +4,7 @@ $scope.intro = false;
 $scope.result = true;
 $scope.setAlert = true;
 $scope.alertStart = true;
-
+$scope.smallAmount = false;
 //intialize global vars
 $scope.total = 0;
 var jemsCup = 9;
@@ -34,10 +34,15 @@ $scope.calcBeer = function(fee){
     if ($scope.dayAmount === 1 ) {
       console.log("1 cup a day");
       $scope.pluralSingle = "";
+    } else if ($scope.dayAmount === 0) {
+      $scope.smallAmount = true;
+      console.log("small amount for daily suggestion");
     } else {
       console.log("cups in plural");
       $scope.pluralSingle = "s";
     }
+
+
   //AA alert - change it to switches
  //    if ($scope.dayAmount > 1){
  //      $scope.pluralSingle = "s";
