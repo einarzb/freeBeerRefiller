@@ -26,5 +26,8 @@
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "jqlite": "^0.2.41"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }

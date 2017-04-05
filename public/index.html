@@ -26,109 +26,104 @@
 </head>
 
 <body ng-controller="mainCtrl" ng-cloak="">
-    <div class="container">
-        <div class="row">
-            <div class="jumbotron">
+    <div class="container-fluid jumbotron">
 
-                <div class="row">
-                    <div class="pull-left">
-                        <h1>beer++</h1>
-                        <h5><em>TO BEER OR NOT TO BE</em></h5>
-                    </div>
-                    <div class="pull-right" style="margin-top:40px;">
-                        <span class="text-center">
-                          <img style="height:46px;width:179px;" ng-src="images/we.png" alt="" />
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="text-center" ng-hide="intro">
-                        <p>
-                            <label>Enter your monthly fee
+        <div class="row">
+            <div class="col-md-6 col-md-push-1">
+                <h1>beer++</h1>
+                <h5><em>TO BEER OR NOT TO BE</em></h5>
+            </div>
+            <div class="col-md-6 col-md-push-4">
+                <img style="height:46px;width:179px;margin-top:32px;" ng-src="images/we.png" alt="" />
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="text-center" ng-hide="intro">
+                <p>
+                    <label>Enter your monthly fee
                             <input class="fee" ng-model="fee" type="number" min="0" />
                             <button class="btn btn-warning calc" ng-click="calcBeer(fee)">calc</button>
                             </label>
-                        </p>
-                    </div>
-                </div>
+                </p>
+            </div>
+        </div>
 
-                <div class="row">
-                    <div class="result text-center" ng-show="!result">
-                        <p>In order to not be a
-                            <span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down:<br><br>
-                            <span class="h3">{{total}}</span> Jem's cup{{pluralSingle}} in total !<br> which is about <span class="h3">{{dayAmount}}</span> cups a day! fantatsic!
-                        </p>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="result text-center" ng-show="!result">
+                <p>In order to not be a
+                    <span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down:<br><br>
+                    <span class="h3">{{total}}</span> Jem's cup{{pluralSingle}} in total !<br> which is about <span class="h3">{{dayAmount}}</span> cups a day! fantatsic!
+                </p>
+            </div>
+        </div>
 
 
-                <div class="setAlert text-center" ng-show="!setAlert">
-                    <label>set happy hour:</label>
-                    <input type="time" class="time" ng-model="happyHour" placeholder="01:00:PM" min="08:00:00" max="23:00:00" required />
-                    <br>
-                    <label>set refill alert:</label>
-                    <select ng-model="refill">
+        <div class="setAlert text-center" ng-show="!setAlert">
+            <label>set happy hour:</label>
+            <input type="time" class="time" ng-model="happyHour" placeholder="01:00:PM" min="08:00:00" max="23:00:00" required />
+            <br>
+            <label>set refill alert:</label>
+            <select ng-model="refill">
                         <option value="20">20 min</option>
                         <option value="40">40 min</option>
                         <option value="60">60 min</option>
                         <option value="2 hour">2 HR</option>
                         <option value="3 hour">3 HR</option>
                       </select>
-                    <br> <br>
-                    <button class="btn btn-warning" ng-click="setBeerAlert(happyHour)">set Alert</button>
-                </div>
+            <br> <br>
+            <button class="btn btn-warning" ng-click="setBeerAlert(happyHour)">set Alert</button>
+        </div>
 
 
-                <div class="jumbotron text-center" ng-show="!alertStart">
-                    <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i></h1>
-                    <p style="color:#fff;">you will get a beer alert starting from {{happyHour}}pm in an intervals of {{refill}} mins
-                    </p>
+        <div class="jumbotron text-center" ng-show="!alertStart">
+            <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i></h1>
+            <p style="color:#fff;">you will get a beer alert starting from <br> {{happyHour}} pm in an intervals of {{refill}} mins
+            </p>
 
-                    <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>
-                    <button class="btn btn-success" ng-click="start()">ok</button>
+            <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>
+            <button class="btn btn-success" ng-click="start()">ok</button>
 
 
-                </div>
+        </div>
 
-                <!--end col-->
-                <!--BEER ANIMATION-->
-                <div class="container">
-                    <div class="row">
-                        <div id="container" ng-show="!result">
-                            <div class="pour"></div>
-                            <div id="beaker">
-                                <div class="beer-foam">
-                                    <div class="foam-1"></div>
-                                    <div class="foam-2"></div>
-                                    <div class="foam-3"></div>
-                                    <div class="foam-4"></div>
-                                    <div class="foam-5"></div>
-                                    <div class="foam-6"></div>
-                                    <div class="foam-7"></div>
-                                </div>
+        <!--end col-->
+        <!--BEER ANIMATION-->
+        <div class="container">
+            <div class="row">
+                <div id="container" ng-show="!result">
+                    <div class="pour"></div>
+                    <div id="beaker">
+                        <div class="beer-foam">
+                            <div class="foam-1"></div>
+                            <div class="foam-2"></div>
+                            <div class="foam-3"></div>
+                            <div class="foam-4"></div>
+                            <div class="foam-5"></div>
+                            <div class="foam-6"></div>
+                            <div class="foam-7"></div>
+                        </div>
 
-                                <div id="liquid">
-                                    <p class="text-center beerText"> accept the challenge? <br><br>
-                                        <button style="z-index:9999" class="btn btn-success" type="button" ng-click="yes()" name="yes"> yes </button>
-                                        <button class="btn btn-danger" type="button" name="no" ng-click="no()">no</button>
-                                    </p>
-                                    <div class="bubble bubble1"></div>
-                                    <div class="bubble bubble2"></div>
-                                    <div class="bubble bubble3"></div>
-                                    <div class="bubble bubble4"></div>
-                                    <div class="bubble bubble5"></div>
-                                </div>
-                            </div>
+                        <div id="liquid">
+                            <p class="text-center beerText"> accept the challenge? <br><br>
+                                <button style="z-index:9999" class="btn btn-success" type="button" ng-click="yes()" name="yes"> yes </button>
+                                <button class="btn btn-danger" type="button" name="no" ng-click="no()">no</button>
+                            </p>
+                            <div class="bubble bubble1"></div>
+                            <div class="bubble bubble2"></div>
+                            <div class="bubble bubble3"></div>
+                            <div class="bubble bubble4"></div>
+                            <div class="bubble bubble5"></div>
                         </div>
                     </div>
                 </div>
-                <!--END COL-->
-                <footer ng-show="!result">Another thing from <a href="http://www.einarb.com.webservices.co.il/portfolio/public/index.html?utm_source=beer&utm_campaign=cv">Einar Barzilay</a> All Rights Reserved.
-                </footer>
             </div>
-            <!--jumbatron-->
-
         </div>
+        <!--END COL-->
+        <footer class="text-center" ng-show="!result">
+            Another thing from <a href="http://www.einarb.com.webservices.co.il/portfolio/public/index.html?utm_source=beer&utm_campaign=cv">Einar Barzilay</a> All Rights Reserved.
+        </footer>
+
         <!--end container-->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
@@ -136,6 +131,7 @@
         <script type="text/javascript" src="js/mainCtrl.js"></script>
         <script type="text/javascript" src="js/beerAnimation.js"></script>
 
+    </div>
 
 </body>
 
