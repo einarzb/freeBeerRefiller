@@ -32,9 +32,9 @@
                 <h1>beer++</h1>
                 <h5><em>TO BEER OR NOT TO BE</em></h5>
             </div>
-            <div class="col-md-6 col-md-push-3">
+            <!-- <div class="col-md-6 col-md-push-3">
                 <a href="https://www.wework.com/"><img style="height:46px;width:179px;margin-top:32px;" ng-src="images/we.png" alt="" /></a>
-            </div>
+            </div> -->
         </div>
         <!--calc-->
         <div class="row">
@@ -50,15 +50,15 @@
 
         <div class="row">
             <div class="result text-center" ng-show="!result">
-                <p>In order to not be a
-                    <span class="h3 text-center"><em> FRAIER</em></span> you'll need to chug down:<br><br>
-                    <span class="h3">{{total}}</span> Jem's cup{{pluralSingle}} in total !<br> which is about <span class="h3">{{dayAmount}}</span> cups a day! fantatsic!
+                <p> To make the most out of your rental fee in <b>we work</b> <br> you'll need to chug down:<br><br>
+                    <span style="color:#FFEE7D">{{total}}</span> Jem's cup{{pluralSingle}} in total !<br> which is about
+                    <span style="color:#FFEE7D">{{dayAmount}}</span> cups a day! fantatsic!
                 </p>
             </div>
         </div>
 
 
-        <div class="setAlert text-center" ng-show="!setAlert">
+        <div class="text-center setTimePart" ng-show="!setAlert">
             <label>set happy hour:</label>
             <input type="time" class="time" ng-model="happyHour" placeholder="01:00:PM" min="08:00:00" max="23:00:00" required />
             <br>
@@ -119,8 +119,9 @@
             </div>
         </div>
         <!--END COL-->
-        <footer class="text-center" ng-show="!result">
-            Another thing from <a href="http://www.einarb.com.webservices.co.il/portfolio/public/index.html?utm_source=beer&utm_campaign=cv">Einar Barzilay</a> All Rights Reserved.
+        <footer class="footer col-md-6 col-md-push-1">
+            <a href="https://www.wework.com/"><img style="height:46px;width:179px;" ng-src="images/we.png" alt="" /></a> <br> Another thing from <a href="http://www.einarb.com.webservices.co.il/portfolio/public/index.html?utm_source=beer&utm_campaign=cv">Einar Barzilay</a> All Rights
+            Reserved.
         </footer>
 
         <!--end container-->
