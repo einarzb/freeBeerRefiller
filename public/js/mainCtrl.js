@@ -14,14 +14,14 @@ var jemsCup = 9;
 
 //user input
 $scope.fee;
-$scope.happyHour;
+$scope.time; //= new Date()
 
 //calculation function
 $scope.calcBeer = function(fee){
   if ($scope.fee > 0) {
       //toggle to hide #intro and reveal #result view
-      $scope.intro = true;
-      $scope.result = false;
+      $scope.intro =! $scope.intro;
+      $scope.result =! $scope.result;
       //calculate total
       $scope.total = Math.round((fee / jemsCup));
       console.log($scope.total);
@@ -41,13 +41,13 @@ $scope.calcBeer = function(fee){
       $scope.pluralSingle = "";
     //if day amount is smaller then 0 cup per day then it shows only total
     } else if ($scope.dayAmount === 0) {
-      $scope.smallAmount = true;
+      $scope.smallAmount =! $scope.smallAmount;
       console.log("small amount for daily suggestion");
    } else if ($scope.dayAmount > 8) {
       console.log("too much beers for one day");
       $scope.pluralSingle = "s";
-      $scope.smallAmount = true;
-      $scope.bigAmount = false;
+      $scope.smallAmount =! $scope.smallAmount;
+      $scope.bigAmount =! $scope.bigAmount;
 
     //if day amount bigger than 1 cup a day than it turn into cups
     } else {
@@ -74,19 +74,33 @@ $scope.no = function(){
 $scope.yes = function(){
   console.log("yes");
   //toggeling views
-  $scope.setAlert = false;
-  $scope.result = true;
+  $scope.setAlert =! $scope.setAlert;
+  $scope.result =! $scope.result;
 };
 
 
-$scope.setBeerAlert = function(happyHour){
-  $scope.alertStart = false;
-  $scope.setAlert = true;
-
-  var dateString = $scope.happyHour;
-  var dateString = dateString.split(' ').slice(0, 3).join(' ');
-  console.log(dateString);
+$scope.setBeerAlert = function(time){
+  $scope.alertStart =! $scope.alertStart;
+  $scope.setAlert =! $scope.setAlert;
+  //time calculator and parser
+  $scope.time = new Date($scope.time).toUTCString();
+  $scope.time = $scope.time.split(' ').slice(4, 5).join(' ');
+  console.log($scope.time);
+  if ($scope.time > '12:00:00') {
+    console.log("fuck this");
+    $scope.ampm = "PM";
+  } else {
+    $scope.ampm = "AM";
+  }
+  console.log($scope.time);
 };
+
+$scope.start = function (time, refill) {
+  //needs to get the dayAmount
+  confirm("you need to drink " + $scope.dayAmount + " beers a Day" );
+}
+
+
 //todo: if total < 100 its not good. must be starting from 200
 //if total > 1000. 1500 = 6 beers a day . 2400 - 9 cups AA
 // if total > 2400 then calculate month consupmtion and week and day

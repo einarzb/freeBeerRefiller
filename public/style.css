@@ -6,9 +6,10 @@ p {font-size: 1.7em;}
 input, select{color:grey;border-radius: 5px;margin-top:5px;}
 .result {color:#fff;margin-top:20px;}
 label{font-weight: normal;}
-.btn-warning{height: 37px;margin-top: -6px;}
-.time{width: 120px;}
+.btn-warning, #ok {height: 37px;margin-top: -6px;}
+.time{width: 140px;}
 .calcPart, .setTimePart{margin-top: 160px;font-size: 1.5em;}
+
 
 .footer {
   position: fixed;
