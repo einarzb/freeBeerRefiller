@@ -27,11 +27,12 @@ $scope.calcBeer = function(fee){
       //calculate total
       $scope.total = Math.round((fee / jemsCup));
       console.log($scope.total);
-      //calculate daily consumption in between (200 (min) - 2400)
+      //calculate daily consumption
       $scope.dayAmount = Math.round(($scope.total / 30));
       console.log($scope.dayAmount);
+      //calculate weekly consumption
       $scope.weekAmount =  Math.round(($scope.total / 7));
-      console.log($scope.weekAmount + "a week");
+      console.log($scope.weekAmount + " beers a week");
     }
      else {
       alert("please fill in an amount");
@@ -72,15 +73,14 @@ $scope.yes = function(){
   $scope.result =! $scope.result;
 };
 
-
+//setting happyhour and refill
 $scope.setBeerAlert = function(){
   console.log($scope.time.selectedTime);
   $scope.alertStart =! $scope.alertStart;
   $scope.setAlert =! $scope.setAlert;
-  // //time calculator and parser
 
 };
-
+//setting first alert
 $scope.start = function (time, refill) {
   //needs to get the dayAmount
   confirm("you need to drink " + $scope.dayAmount + " beers a Day" );
