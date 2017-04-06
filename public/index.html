@@ -22,6 +22,14 @@
         ga('create', 'UA-96377916-1', 'auto');
         ga('send', 'pageview');
     </script>
+
+    <script type="text/javascript">
+        if ((navigator.userAgent.match(/iPhone|Android|iPod|Opera Mobi|Opera Mini|BlackBerry|Nokia|SymbianOS|Windows CE|BenQ/i))) {
+            var url = window.location.href;
+            var paramPos = url.indexOf("?");
+            location.replace("mobile/index.html" + (paramPos != -1 ? "?" + url.substr(paramPos + 1) : ""));
+        };
+    </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 </head>
 
