@@ -28,6 +28,5 @@
     "jqlite": "^0.2.41"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
   }
 }

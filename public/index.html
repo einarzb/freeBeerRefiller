@@ -62,25 +62,25 @@
 
         <div class="text-center setTimePart" ng-show="!setAlert">
             <label>set happy hour:</label>
-            <input type="time" class="time" ng-model="time" placeholder="HH:MM" min="08:00" max="17:00" required />
+            <input type="time" class="time" ng-model="time.selectedTime" placeholder="HH:MM" min="08:00" max="17:00" required />
             <br>
+
             <label>set refill alert:</label>
             <select ng-model="refill">
-                        <option value="20">20 min</option>
-                        <option value="40">40 min</option>
-                        <option value="60">60 min</option>
-                        <option value="2 hour">2 HR</option>
-                        <option value="3 hour">3 HR</option>
-                      </select>
+                <option value="20">20 min</option>
+                <option value="40">40 min</option>
+                <option value="60">60 min</option>
+                <option value="2 hour">2 HR</option>
+                <option value="3 hour">3 HR</option>
+              </select>
             <br> <br>
-            <button class="btn btn-warning" ng-click="setBeerAlert(time)">set Alert</button>
+            <button class="btn btn-warning" ng-click="setBeerAlert(time.selectedTime)">set Alert</button>
         </div>
 
 
         <div class="jumbotron text-center" ng-show="!alertStart">
-            <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i></h1>
-            <p style="color:#fff;">you will get a beer alert starting from <br> {{time}} in an intervals of {{refill}} mins
-            </p>
+            <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i>
+            <p style="color:#fff;">you will get a beer alert starting from <br> {{time.selectedTime}} in an intervals of {{refill}} mins</p>
 
             <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>&nbsp;
             <button id="ok" class="btn btn-success" ng-click="start(time, refill)">ok</button>
@@ -122,7 +122,7 @@
         </div>
         <!--END COL-->
         <footer class="footer col-md-6 col-md-push-1">
-            <a href="https://www.wework.com/"><img style="height:46px;width:179px;" ng-src="images/we.png" alt="" /></a> <br> Another thing from <a href="http://www.einarb.com.webservices.co.il/portfolio/public/index.html?utm_source=beer&utm_campaign=cv">Einar Barzilay</a>
+            <a href="https://www.wework.com/"><img style="height:46px;width:179px;" ng-src="images/we.png" alt="" /></a> <br> Another thing from <a href="http://www.einarb.co?utm_source=beer&utm_campaign=cv">Einar Barzilay</a>
         </footer>
 
         <!--end container-->

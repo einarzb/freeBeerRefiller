@@ -5,7 +5,7 @@ $scope.result = true;
 $scope.setAlert = true;
 $scope.alertStart = true;
 $scope.smallAmount = false;
-$scope.bigAmount = true;
+$scope.bigAmount = true
 
 //intialize global vars
 $scope.total = 0;
@@ -14,7 +14,9 @@ var jemsCup = 9;
 
 //user input
 $scope.fee;
-$scope.time; //= new Date()
+$scope.time = {
+  selectedTime: new Date()
+};
 
 //calculation function
 $scope.calcBeer = function(fee){
@@ -55,14 +57,6 @@ $scope.calcBeer = function(fee){
       $scope.pluralSingle = "s";
     }
 
-
-  //AA alert - change it to switches
- //    if ($scope.dayAmount > 1){
- //      $scope.pluralSingle = "s";
- // else {
- //
- // }
- //    };
 };
 
 //yes/no buttons phase
@@ -79,12 +73,12 @@ $scope.yes = function(){
 };
 
 
-$scope.setBeerAlert = function(time){
+$scope.setBeerAlert = function(){
+  console.log($scope.time.selectedTime);
   $scope.alertStart =! $scope.alertStart;
   $scope.setAlert =! $scope.setAlert;
-  //time calculator and parser
-  $scope.time = new Date().toLocaleTimeString();
-  console.log($scope.time);
+  // //time calculator and parser
+
 };
 
 $scope.start = function (time, refill) {
