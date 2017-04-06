@@ -83,15 +83,7 @@ $scope.setBeerAlert = function(time){
   $scope.alertStart =! $scope.alertStart;
   $scope.setAlert =! $scope.setAlert;
   //time calculator and parser
-  $scope.time = new Date($scope.time).toUTCString();
-  $scope.time = $scope.time.split(' ').slice(4, 5).join(' ');
-  console.log($scope.time);
-  if ($scope.time > '12:00:00') {
-    console.log("fuck this");
-    $scope.ampm = "PM";
-  } else {
-    $scope.ampm = "AM";
-  }
+  $scope.time = new Date().toLocaleTimeString();
   console.log($scope.time);
 };
 
