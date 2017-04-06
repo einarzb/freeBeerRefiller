@@ -74,7 +74,8 @@
             <br>
 
             <label>set refill alert:</label>
-            <select ng-model="refill">
+            <select required ng-model="refill">
+                <option value="" disabled selected>refill</option>
                 <option value="20">20 min</option>
                 <option value="40">40 min</option>
                 <option value="60">60 min</option>
@@ -91,7 +92,7 @@
             <p style="color:#fff;">you will get a beer alert starting from <br> {{time.selectedTime}} in an intervals of {{refill}} mins</p>
 
             <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>&nbsp;
-            <button id="ok" class="btn btn-success" ng-click="start(time, refill)">ok</button>
+            <button id="ok" class="btn btn-success" ng-click="start(time.selectedTime, refill)">ok</button>
 
 
         </div>

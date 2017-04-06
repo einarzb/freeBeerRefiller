@@ -75,13 +75,16 @@ $scope.yes = function(){
 
 //setting happyhour and refill
 $scope.setBeerAlert = function(){
-  console.log($scope.time.selectedTime);
-  $scope.alertStart =! $scope.alertStart;
-  $scope.setAlert =! $scope.setAlert;
-
+  if($scope.refill > 0){
+    console.log($scope.time.selectedTime);
+    $scope.alertStart =! $scope.alertStart;
+    $scope.setAlert =! $scope.setAlert;
+  } else {
+    alert("please choose refill ")
+  }
 };
 //setting first alert
-$scope.start = function (time, refill) {
+$scope.start = function () {
   //needs to get the dayAmount
   confirm("you need to drink " + $scope.dayAmount + " beers a Day" );
 }
