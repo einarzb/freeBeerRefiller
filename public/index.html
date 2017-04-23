@@ -83,11 +83,11 @@
             <label>set refill alert:</label>
             <select required ng-model="refill">
                 <option value="" disabled selected>refill</option>
-                <option value="20">20 min</option>
-                <option value="40">40 min</option>
-                <option value="60">60 min</option>
-                <option value="2 hour">2 HR</option>
-                <option value="3 hour">3 HR</option>
+                <option value="20 minutes">20 min</option>
+                <option value="40 minutes">40 min</option>
+                <option value="hour">60 min</option>
+                <option value="2 hours">2 HR</option>
+                <option value="3 hours">3 HR</option>
               </select>
             <br> <br>
             <button class="btn btn-warning" ng-click="setBeerAlert(time.selectedTime)">set Alert</button>
@@ -96,12 +96,9 @@
 
         <div class="jumbotron text-center" ng-show="!alertStart">
             <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i>
-            <p style="color:#fff;">you will get a beer alert starting from <br> {{happyhour}} in an intervals of {{refill}} mins</p>
-
-            <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>&nbsp;
+            <p style="color:#fff;">you will get a beer alert starting from <br> {{happyhour}} in an intervals of {{refill}}</p>
             <button id="ok" class="btn btn-success" ng-click="start(time.selectedTime, refill)">ok</button>
-
-
+            <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>&nbsp;
         </div>
 
         <!--end col-->

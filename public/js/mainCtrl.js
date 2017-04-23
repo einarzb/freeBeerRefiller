@@ -79,14 +79,15 @@ $scope.setBeerAlert = function(){
     console.log($scope.time.selectedTime);
     $scope.alertStart =! $scope.alertStart;
     $scope.setAlert =! $scope.setAlert;
-  // } else {
-  //   alert("please choose refill ")
-  // }
 };
 //setting first alert
 $scope.start = function () {
-  //needs to get the dayAmount
-  confirm("Congrats! by our calaculation you need to drink " + $scope.dayAmount + " beers a Day! Drink your first beer at " + $scope.happyhour +  " and we'll remind you to refill your cup every " + $scope.refill + " minutes");
+  if ($scope.refill === "20"){
+
+    confirm("Congrats! by our calaculation you need to drink " + $scope.dayAmount + " beers a Day! Drink your first beer at " + $scope.happyhour +  " and we'll remind you to refill your cup every " + $scope.refill);
+  } else if($scope.refill === "2 hour") {
+    confirm("Congrats! by our calaculation you need to drink " + $scope.dayAmount + " beers a Day! Drink your first beer at " + $scope.happyhour +  " and we'll remind you to refill your cup every " + $scope.refill);
+  }
 }
 
 
