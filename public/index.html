@@ -70,7 +70,14 @@
 
         <div class="text-center setTimePart" ng-show="!setAlert">
             <label>set happy hour:</label>
-            <input type="time" class="time" ng-model="time.selectedTime" placeholder="HH:MM" min="08:00" max="17:00" required />
+            <select required ng-model="happyhour">
+                <option value="" disabled selected>choose</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+              </select>
             <br>
 
             <label>set refill alert:</label>
@@ -89,7 +96,7 @@
 
         <div class="jumbotron text-center" ng-show="!alertStart">
             <h1>it's beer O'clock <i class="fa fa-beer" aria-hidden="true"></i>
-            <p style="color:#fff;">you will get a beer alert starting from <br> {{time.selectedTime}} in an intervals of {{refill}} mins</p>
+            <p style="color:#fff;">you will get a beer alert starting from <br> {{happyhour}} in an intervals of {{refill}} mins</p>
 
             <button class="btn btn-warning recalc" ng-show="intro" ng-click="calcBeer(fee)">re-calculate</button>&nbsp;
             <button id="ok" class="btn btn-success" ng-click="start(time.selectedTime, refill)">ok</button>
