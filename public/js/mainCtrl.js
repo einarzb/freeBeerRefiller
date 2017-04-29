@@ -13,7 +13,7 @@ var jemsCup = 9;
 
 
 //user input
-$scope.fee;
+$scope.fee=900;
 $scope.time = {
   selectedTime: new Date()
 };

@@ -53,16 +53,17 @@
         <div class="row">
             <div class="col-md-6 col-md-push-3 calcPart" ng-hide="intro">
                 <p class="text-center">
-                    <label>Enter your monthly fee &nbsp; <br>
-                    <input class="fee input-padding" type="text" ng-model="demoVals.sliderExample1" />
 
-                        <div class="myslider">
-                    <div ui-slider class="myslider" value="900" min="0" max="10000" ng-model="demoVals.sliderExample1">
-                    </div>
+                    <label>Enter your monthly fee &nbsp; <br>
+                    <input class="fee input-padding" value="900" type="text" ng-model="fee" />
+                     <button class="btn btn-warning calc " ng-click="calcBeer(fee)">next</button>
+                    <div class="myslider">
+                    <div ui-slider class="myslider" value="900" min="0" max="10000" ng-model="fee">
+                    </div> <br>
+
                 </div>
 
-                     <!--  <input class="fee" ng-model="fee" type="number" min="0" />
-                      <button class="btn btn-warning calc" ng-click="calcBeer(fee)">calc</button> -->
+                   
                    </label>
                 </p>
             </div>
