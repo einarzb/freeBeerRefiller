@@ -1,6 +1,9 @@
 //package and module requirements
 var express = require('express');
 var app = express();
+var slider = require('slider');
+
+module.exports = 'ui.slider';
 
 //middleware
 app.use(express.static('node_modules'));
